@@ -96,7 +96,6 @@ RSpec.describe 'invoices show' do
      end
   end
   #   Merchant Invoice Show Page: Total Revenue and Discounted Revenue
-
   # As a merchant
   # When I visit my merchant invoice show page
   # Then I see the total revenue for my merchant from this invoice (not including discounts)
@@ -108,7 +107,6 @@ RSpec.describe 'invoices show' do
     expect(page).to have_content(@invoice_1.total_discounted_revenue)
   end
   #   Merchant Invoice Show Page: Link to applied discounts
-
   # As a merchant
   # When I visit my merchant invoice show page
   # Next to each invoice item I see a link to the show page for the
@@ -131,7 +129,7 @@ RSpec.describe 'invoices show' do
     within "#invoice-item-#{@ii_99.id}" do
       click_link "#{@ii_99.applied_discount}"
     end
-    
+
     expect(current_path).to eq("/merchant/#{@merchant1.id}/discounts/#{@discount_1.id}")
   end
 end
